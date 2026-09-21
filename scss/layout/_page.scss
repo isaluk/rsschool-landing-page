@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin-inline: auto;
+  padding-inline: $container-padding;
+
+  @include mobile {
+    padding-inline: $container-padding-mobile;
+  }
+}

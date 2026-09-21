@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+$icons: (
+  "sun": 22px,
+  "moon": 18px,
+  "coffeecup": 20px,
+);
+
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+
+  @each $name, $size in $icons {
+    &--#{$name} {
+      --icon: url("../assets/icons/#{$name}.svg");
+      width: $size;
+      height: $size;
+    }
+  }
+}

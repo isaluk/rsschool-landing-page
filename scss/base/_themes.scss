@@ -1,0 +1,19 @@
+:root {
+  --header-height: 90px;
+
+  --bg: #e1d4c9;
+  --ink: #403f3d;
+  --line: #c1b6ad;
+  --panel-ink: #e1d4c9;
+  --accent: #b0907a;
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #292826;
+  --ink: #e1d4c9;
+  --line: #665f55;
+
+  color-scheme: dark;
+}
