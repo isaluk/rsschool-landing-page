@@ -6,6 +6,7 @@
 // Layout
 @use "layout/page";
 @use "layout/header";
+@use "layout/footer";
 
 // Blocks
 @use "blocks/icon";
@@ -18,3 +19,4 @@
 @use "blocks/slider";
 @use "blocks/about";
 @use "blocks/app";
+@use "blocks/socials";
