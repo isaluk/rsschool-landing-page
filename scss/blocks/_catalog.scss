@@ -33,6 +33,10 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
+
+    @media (min-width: 1400px) {
+      column-gap: min(40px, calc((100% - 1240px) / 3));
+    }
   }
 
   &__item {

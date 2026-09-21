@@ -74,6 +74,7 @@ address {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 20px);
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -916,6 +917,12 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+}
+@media (min-width: 1400px) {
+  .catalog__list {
+    -moz-column-gap: min(40px, (100% - 1240px) / 3);
+         column-gap: min(40px, (100% - 1240px) / 3);
+  }
 }
 .catalog__item {
   flex: 0 0 310px;
