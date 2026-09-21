@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coffee House</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/main.css">
   <script>
     (function () {
       const saved = localStorage.getItem('theme');
@@ -29,8 +29,8 @@
     <header class="header">
       <div class="container header__inner">
         <a class="logo header__logo" href="index.html" aria-label="Resource Coffee House — home page">
-          <img class="logo__image logo__image--light" src="assets/images/logo.svg" alt="" width="100" height="60" />
-          <img class="logo__image logo__image--dark" src="assets/images/logo-dark.svg" alt="" width="100" height="60" />
+          <img class="logo__image logo__image--light" src="assets/images/logo.svg" alt="" width="100" height="60">
+          <img class="logo__image logo__image--dark" src="assets/images/logo-dark.svg" alt="" width="100" height="60">
         </a>
 
         <nav class="header__nav" id="site-nav">
@@ -53,12 +53,12 @@
         <div class="header__controls">
 
           <button type="button" class="theme-switch" aria-label="Switch theme" data-theme-button>
-            <div class="theme-switch__icon theme-switch__icon--light">
+            <span class="theme-switch__icon theme-switch__icon--light">
               <span class="icon icon--sun" aria-hidden="true"></span>
-            </div>
-            <div class="theme-switch__icon theme-switch__icon--dark">
+            </span>
+            <span class="theme-switch__icon theme-switch__icon--dark">
               <span class="icon icon--moon" aria-hidden="true"></span>
-            </div>
+            </span>
           </button>
 
           <a class="header__menu-link" href="catalog.html">
@@ -115,7 +115,7 @@
               <ul class="slider__track">
                 <li class="slider__slide">
                   <article class="slide">
-                    <img class="slide__image" src="assets/images/slider-1.png" alt="S’mores Frappuccino" />
+                    <img class="slide__image" src="assets/images/slider-1.png" alt="S’mores Frappuccino">
                     <div class="slide__body">
                       <h3 class="slide__title">S’mores Frappuccino</h3>
                       <p class="slide__description">
@@ -128,7 +128,7 @@
                 </li>
                 <li class="slider__slide">
                   <article class="slide">
-                    <img class="slide__image" src="assets/images/slider-2.png" alt="Caramel Macchiato" />
+                    <img class="slide__image" src="assets/images/slider-2.png" alt="Caramel Macchiato">
                     <div class="slide__body">
                       <h3 class="slide__title">Caramel Macchiato</h3>
                       <p class="slide__description">
@@ -141,7 +141,7 @@
                 </li>
                 <li class="slider__slide">
                   <article class="slide">
-                    <img class="slide__image" src="assets/images/slider-3.png" alt="Ice coffee" />
+                    <img class="slide__image" src="assets/images/slider-3.png" alt="Ice coffee">
                     <div class="slide__body">
                       <h3 class="slide__title">Ice coffee</h3>
                       <p class="slide__description">
@@ -158,11 +158,10 @@
               <span class="icon icon--arrowright" aria-hidden="true"></span>
             </button>
 
-            <div class="slider__dots" role="tablist" aria-label="Slides">
-              <button type="button" class="slider__dot slider__dot--active" role="tab" aria-label="Slide 1"
-                aria-selected="true"></button>
-              <button type="button" class="slider__dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
-              <button type="button" class="slider__dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+            <div class="slider__dots" role="group" aria-label="Slides">
+              <button type="button" class="slider__dot slider__dot--active" aria-label="Slide 1"></button>
+              <button type="button" class="slider__dot" aria-label="Slide 2"></button>
+              <button type="button" class="slider__dot" aria-label="Slide 3"></button>
             </div>
           </div>
         </div>
@@ -178,18 +177,18 @@
           <div class="about__gallery">
             <div class="about__column">
               <figure class="about__figure about__figure--tall">
-                <img class="about__image" src="assets/images/about/about-1.jpg" alt="Guest at Resource Coffee House" />
+                <img class="about__image" src="assets/images/about/about-1.jpg" alt="Guest at Resource Coffee House">
               </figure>
               <figure class="about__figure about__figure--short">
-                <img class="about__image" src="assets/images/about/about-2.jpg" alt="Coffee on the bar" />
+                <img class="about__image" src="assets/images/about/about-2.jpg" alt="Coffee on the bar">
               </figure>
             </div>
             <div class="about__column">
               <figure class="about__figure about__figure--short">
-                <img class="about__image" src="assets/images/about/about-3.jpg" alt="Barista at work" />
+                <img class="about__image" src="assets/images/about/about-3.jpg" alt="Barista at work">
               </figure>
               <figure class="about__figure about__figure--tall">
-                <img class="about__image" src="assets/images/about/about-4.jpg" alt="Interior of the cafe" />
+                <img class="about__image" src="assets/images/about/about-4.jpg" alt="Interior of the cafe">
               </figure>
             </div>
           </div>
@@ -200,21 +199,21 @@
         <div class="container app__inner">
           <div class="app__content">
             <h2 id="app-title" class="title">
-              <em class="title__accent">Download</em> our app<br />to start ordering
+              <em class="title__accent">Download</em> our app<br>to start ordering
             </h2>
             <p>
               Download the Resource app today and experience the comfort of ordering your favorite coffee from
               wherever you are
             </p>
             <div class="app__stores">
-              <a class="store-button" href="#">
+              <a class="store-button" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
                 <span class="icon icon--apple" aria-hidden="true"></span>
                 <span class="store-button__text">
                   <span class="store-button__hint">Available on the</span>
                   <span class="store-button__name">App Store</span>
                 </span>
               </a>
-              <a class="store-button" href="#">
+              <a class="store-button" href="https://play.google.com/" target="_blank" rel="noopener noreferrer">
                 <span class="icon icon--google-play" aria-hidden="true"></span>
                 <span class="store-button__text">
                   <span class="store-button__hint">Available on</span>
@@ -223,7 +222,7 @@
               </a>
             </div>
           </div>
-          <img class="app__image" src="assets/images/mobile-screens.png" alt="Resource app screens" />
+          <img class="app__image" src="assets/images/mobile-screens.png" alt="Resource app screens">
         </div>
       </section>
     </main>
@@ -233,16 +232,19 @@
         <div class="footer__panel">
           <div class="footer__column">
             <h2 class="title title--light">
-              Sip, Savor, Smile.<br /><em class="title__accent">It’s coffee time!</em>
+              Sip, Savor, Smile.<br><em class="title__accent">It’s coffee time!</em>
             </h2>
             <div class="socials">
-              <a class="socials__link" href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+              <a class="socials__link" href="https://x.com/" aria-label="Twitter" target="_blank"
+                rel="noopener noreferrer">
                 <span class="icon icon--twitter" aria-hidden="true"></span>
               </a>
-              <a class="socials__link" href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <a class="socials__link" href="https://www.instagram.com/" aria-label="Instagram" target="_blank"
+                rel="noopener noreferrer">
                 <span class="icon icon--instagram" aria-hidden="true"></span>
               </a>
-              <a class="socials__link" href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <a class="socials__link" href="https://www.facebook.com/" aria-label="Facebook" target="_blank"
+                rel="noopener noreferrer">
                 <span class="icon icon--facebook" aria-hidden="true"></span>
               </a>
             </div>

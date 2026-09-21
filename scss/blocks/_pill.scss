@@ -1,0 +1,57 @@
+@use "../abstracts" as *;
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 8px 16px 8px 8px;
+  border: 0;
+  border-radius: $radius-pill;
+  box-shadow: inset 0 0 0 1px var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background-color $transition-fast,
+    color $transition-fast,
+    box-shadow $transition-fast;
+
+  @include hover {
+    background: var(--pill-active-bg);
+    color: var(--panel-ink);
+    box-shadow: none;
+
+    .pill__mark {
+      background: var(--bg);
+    }
+  }
+
+  &--active {
+    background: var(--pill-active-bg);
+    color: var(--panel-ink);
+    box-shadow: none;
+
+    .pill__mark {
+      background: var(--bg);
+    }
+  }
+
+  &__mark {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--line);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1;
+    transition:
+      background-color $transition-fast,
+      color $transition-fast;
+  }
+}
