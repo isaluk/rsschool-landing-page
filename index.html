@@ -12,6 +12,16 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : (systemDark ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
 </head>
 
 <body>
@@ -42,16 +52,15 @@
         </nav>
 
         <div class="header__controls">
-          <div class="theme-switch" role="group" aria-label="Theme">
-            <button type="button" class="theme-switch__button theme-switch__button--active" aria-label="Light theme"
-              aria-pressed="true" data-theme-button="light">
+
+          <button type="button" class="theme-switch" aria-label="Switch theme" data-theme-button>
+            <div class="theme-switch__icon theme-switch__icon--light">
               <span class="icon icon--sun" aria-hidden="true"></span>
-            </button>
-            <button type="button" class="theme-switch__button" aria-label="Dark theme" aria-pressed="false"
-              data-theme-button="dark">
+            </div>
+            <div class="theme-switch__icon theme-switch__icon--dark">
               <span class="icon icon--moon" aria-hidden="true"></span>
-            </button>
-          </div>
+            </div>
+          </button>
 
           <a class="header__menu-link" href="catalog.html">
             Menu
@@ -68,6 +77,8 @@
     </header>
 
   </div>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
