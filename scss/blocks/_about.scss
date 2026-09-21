@@ -1,0 +1,73 @@
+@use "../abstracts" as *;
+
+.about {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 40px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__figure {
+    overflow: hidden;
+    border-radius: 20px;
+
+    &--tall {
+      aspect-ratio: 660 / 590;
+    }
+
+    &--short {
+      aspect-ratio: 660 / 430;
+    }
+
+    @include hover {
+      .about__image {
+        transform: none;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 500ms ease;
+  }
+
+  @include tablet {
+    &__gallery {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__column {
+      display: contents;
+    }
+
+    &__figure--tall {
+      aspect-ratio: 688 / 590;
+    }
+
+    &__figure--short {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    &__figure--tall {
+      aspect-ratio: 348 / 590;
+    }
+  }
+}
