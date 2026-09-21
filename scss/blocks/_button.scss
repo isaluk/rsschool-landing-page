@@ -29,3 +29,23 @@
     }
   }
 }
+
+.round-button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--slider-line);
+  color: var(--ink);
+  transition:
+    box-shadow $transition-fast,
+    background-color $transition-fast;
+
+  @include hover {
+    color: var(--ink-inverse);
+    background: var(--slider-line);
+  }
+}

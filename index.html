@@ -8,8 +8,8 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/main.css" />
   <script>
     (function () {
@@ -95,6 +95,74 @@
                 Menu
                 <span class="icon icon--coffeecup" aria-hidden="true"></span>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="favorite" id="favorite-coffee" aria-labelledby="favorite-title">
+        <div class="container favorite__container">
+          <h2 id="favorite-title" class="title title--center">
+            Choose your <em class="title__accent">favorite</em> coffee
+          </h2>
+
+          <div class="slider">
+            <button type="button" class="round-button slider__arrow slider__arrow--prev" aria-label="Previous slide">
+              <span class="icon icon--arrowleft" aria-hidden="true"></span>
+            </button>
+
+            <div class="slider__viewport">
+              <ul class="slider__track">
+                <li class="slider__slide">
+                  <article class="slide">
+                    <img class="slide__image" src="assets/images/slider-1.png" alt="S’mores Frappuccino" />
+                    <div class="slide__body">
+                      <h3 class="slide__title">S’mores Frappuccino</h3>
+                      <p class="slide__description">
+                        This new drink takes an espresso and mixes it with brown sugar and cinnamon before being
+                        topped with oat milk.
+                      </p>
+                      <span class="slide__price">$5.50</span>
+                    </div>
+                  </article>
+                </li>
+                <li class="slider__slide">
+                  <article class="slide">
+                    <img class="slide__image" src="assets/images/slider-2.png" alt="Caramel Macchiato" />
+                    <div class="slide__body">
+                      <h3 class="slide__title">Caramel Macchiato</h3>
+                      <p class="slide__description">
+                        Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under
+                        whipped thick foam.
+                      </p>
+                      <span class="slide__price">$5.00</span>
+                    </div>
+                  </article>
+                </li>
+                <li class="slider__slide">
+                  <article class="slide">
+                    <img class="slide__image" src="assets/images/slider-3.png" alt="Ice coffee" />
+                    <div class="slide__body">
+                      <h3 class="slide__title">Ice coffee</h3>
+                      <p class="slide__description">
+                        A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.
+                      </p>
+                      <span class="slide__price">$4.50</span>
+                    </div>
+                  </article>
+                </li>
+              </ul>
+            </div>
+
+            <button type="button" class="round-button slider__arrow slider__arrow--next" aria-label="Next slide">
+              <span class="icon icon--arrowright" aria-hidden="true"></span>
+            </button>
+
+            <div class="slider__dots" role="tablist" aria-label="Slides">
+              <button type="button" class="slider__dot slider__dot--active" role="tab" aria-label="Slide 1"
+                aria-selected="true"></button>
+              <button type="button" class="slider__dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+              <button type="button" class="slider__dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
             </div>
           </div>
         </div>

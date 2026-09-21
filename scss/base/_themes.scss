@@ -3,9 +3,11 @@
 
   --bg: #e1d4c9;
   --ink: #403f3d;
+  --ink-inverse: #e1d4c9;
   --line: #c1b6ad;
   --panel-ink: #e1d4c9;
   --accent: #b0907a;
+  --slider-line: #665f55;
 
   color-scheme: light;
 }
@@ -13,7 +15,9 @@
 [data-theme="dark"] {
   --bg: #292826;
   --ink: #e1d4c9;
+  --ink-inverse: #403f3d;
   --line: #665f55;
+  --slider-line: #c1b6ad;
 
   color-scheme: dark;
 }
