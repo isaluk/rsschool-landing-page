@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coffee House</title>
+  <title>Coffee House — Menu</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.css">
@@ -45,7 +43,7 @@
               <a class="header__link" href="index.html#mobile-app">Mobile app</a>
             </li>
             <li class="header__item">
-              <a class="header__link" href="#contacts">Contact us</a>
+              <a class="header__link" href="index.html#contacts">Contact us</a>
             </li>
           </ul>
         </nav>
@@ -84,15 +82,15 @@
             </h1>
 
             <div class="catalog__tabs" role="group" aria-label="Menu categories">
-              <button type="button" class="pill catalog__tab pill--active" aria-current="true">
+              <button type="button" class="pill catalog__tab pill--active" aria-pressed="true">
                 <span class="pill__mark" aria-hidden="true">☕</span>Coffee
               </button>
 
-              <button type="button" class="pill catalog__tab" aria-current="false">
+              <button type="button" class="pill catalog__tab" aria-pressed="false">
                 <span class="pill__mark" aria-hidden="true">🍵</span>Tea
               </button>
 
-              <button type="button" class="pill catalog__tab" aria-current="false">
+              <button type="button" class="pill catalog__tab" aria-pressed="false">
                 <span class="pill__mark" aria-hidden="true">🍰</span>Dessert
               </button>
             </div>

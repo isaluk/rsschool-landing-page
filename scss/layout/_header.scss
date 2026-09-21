@@ -40,6 +40,7 @@
     white-space: nowrap;
     padding-bottom: 2px;
     border-bottom: 2px solid var(--bg);
+    transition: border-color $transition-fast;
 
     @include underline-on-hover;
   }
@@ -59,6 +60,7 @@
     white-space: nowrap;
     padding-bottom: 2px;
     border-bottom: 2px solid var(--bg);
+    transition: border-color $transition-fast;
 
     @include underline-on-hover;
 

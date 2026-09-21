@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coffee House</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.css">
@@ -80,7 +78,7 @@
         <div class="container">
           <div class="hero__banner">
             <video class="hero__video" src="assets/videos/hero.mp4" autoplay muted loop playsinline aria-hidden="true"
-              tabindex="-1"></video>
+              tabindex="-1" poster="assets/images/hero.jpg"></video>
             <div class="hero__overlay" aria-hidden="true"></div>
             <div class="hero__content">
               <h1 id="hero-title" class="title title--hero">
@@ -115,7 +113,8 @@
               <ul class="slider__track">
                 <li class="slider__slide">
                   <article class="slide">
-                    <img class="slide__image" src="assets/images/slider-1.png" alt="S’mores Frappuccino">
+                    <img class="slide__image" src="assets/images/slider-1.png" alt="S’mores Frappuccino" width="480"
+                      height="480">
                     <div class="slide__body">
                       <h3 class="slide__title">S’mores Frappuccino</h3>
                       <p class="slide__description">
@@ -128,7 +127,8 @@
                 </li>
                 <li class="slider__slide">
                   <article class="slide">
-                    <img class="slide__image" src="assets/images/slider-2.png" alt="Caramel Macchiato">
+                    <img class="slide__image" src="assets/images/slider-2.png" alt="Caramel Macchiato" width="480"
+                      height="480">
                     <div class="slide__body">
                       <h3 class="slide__title">Caramel Macchiato</h3>
                       <p class="slide__description">
@@ -141,7 +141,8 @@
                 </li>
                 <li class="slider__slide">
                   <article class="slide">
-                    <img class="slide__image" src="assets/images/slider-3.png" alt="Ice coffee">
+                    <img class="slide__image" src="assets/images/slider-3.png" alt="Ice coffee" width="480"
+                      height="480">
                     <div class="slide__body">
                       <h3 class="slide__title">Ice coffee</h3>
                       <p class="slide__description">
@@ -251,7 +252,7 @@
           </div>
 
           <div class="footer__column">
-            <h3 class="footer__subtitle">Contact us</h3>
+            <h2 class="footer__subtitle">Contact us</h2>
             <address class="footer__list">
               <a class="footer__link" href="https://maps.google.com/?q=8558+Green+Rd.,+LA" target="_blank"
                 rel="noopener noreferrer">

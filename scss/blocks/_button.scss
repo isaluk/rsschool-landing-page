@@ -14,18 +14,28 @@
   line-height: 1.25;
 
   & .icon {
-    display: none;
+    width: 0;
+    margin-left: -8px;
+    opacity: 0;
+    transition:
+      width $transition-fast,
+      margin-left $transition-fast,
+      opacity $transition-fast;
   }
 
   @include hover {
     & .icon {
-      display: inline-block;
+      width: 20px;
+      margin-left: 0;
+      opacity: 1;
     }
   }
 
   @include tablet {
     & .icon {
-      display: inline-block;
+      width: 20px;
+      margin-left: 0;
+      opacity: 1;
     }
   }
 }
