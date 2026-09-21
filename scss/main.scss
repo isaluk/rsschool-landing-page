@@ -1,6 +1,7 @@
 @use "base/reset";
 @use "base/themes";
 @use "base/base";
+@use "base/fonts";
 
 // Layout
 @use "layout/page";
@@ -11,3 +12,6 @@
 @use "blocks/logo";
 @use "blocks/theme-switch";
 @use "blocks/burger";
+@use "blocks/hero";
+@use "blocks/title";
+@use "blocks/button";

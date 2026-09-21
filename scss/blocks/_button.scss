@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  height: 64px;
+  border-radius: $radius-pill;
+  background: var(--bg);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.25;
+
+  & .icon {
+    display: none;
+  }
+
+  @include hover {
+    & .icon {
+      display: inline-block;
+    }
+  }
+
+  @include tablet {
+    & .icon {
+      display: inline-block;
+    }
+  }
+}

@@ -8,9 +8,8 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet">
+  <link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/main.css" />
   <script>
     (function () {
@@ -75,6 +74,32 @@
         </div>
       </div>
     </header>
+
+    <main class="page__main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero__banner">
+            <video class="hero__video" src="assets/videos/hero.mp4" autoplay muted loop playsinline aria-hidden="true"
+              tabindex="-1"></video>
+            <div class="hero__overlay" aria-hidden="true"></div>
+            <div class="hero__content">
+              <h1 id="hero-title" class="title title--hero">
+                <em class="title__accent">Enjoy</em> premium coffee at our charming cafe
+              </h1>
+              <p>
+                With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular
+                destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite
+                beverage.
+              </p>
+              <a class="button" href="catalog.html">
+                Menu
+                <span class="icon icon--coffeecup" aria-hidden="true"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
   </div>
 
