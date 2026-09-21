@@ -1,0 +1,93 @@
+@use "../abstracts" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background: var(--bg);
+  padding-top: 10px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__nav {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    margin-right: clamp(1.5em, 3vw, 44px);
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: clamp(1em, 2.8vw, 40px);
+  }
+
+  &__link {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--bg);
+    transition: border-color $transition-fast;
+
+    @include underline-on-hover;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+
+  &__menu-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--bg);
+    transition: border-color $transition-fast;
+
+    @include underline-on-hover;
+
+    &--current {
+      border-bottom: 2px solid var(--ink);
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  @include tablet {
+    &__menu-link {
+      display: none;
+    }
+
+    &__item--tablet-only {
+      display: block;
+    }
+
+    &__nav {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    &__controls {
+      gap: 12px;
+    }
+  }
+}

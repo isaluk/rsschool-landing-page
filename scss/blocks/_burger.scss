@@ -1,0 +1,49 @@
+@use "../abstracts" as *;
+
+.burger {
+  position: relative;
+  display: none;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--ink);
+  color: var(--ink);
+  transition: background-color $transition-fast;
+
+  @include hover {
+    background: var(--line);
+  }
+
+  @include tablet {
+    display: block;
+  }
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 1.5px;
+    margin: -0.75px 0 0 -8px;
+    border-radius: 1px;
+    background: currentColor;
+    transition: transform $transition-medium;
+
+    &--top {
+      transform: translateY(-3.5px);
+    }
+
+    &--bottom {
+      transform: translateY(3.5px);
+    }
+  }
+
+  &--open &__line--top {
+    transform: rotate(45deg);
+  }
+
+  &--open &__line--bottom {
+    transform: rotate(-45deg);
+  }
+}

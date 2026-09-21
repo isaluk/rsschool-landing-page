@@ -1,0 +1,110 @@
+@use "../abstracts" as *;
+
+.catalog {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__title {
+    max-width: 800px;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    @include mobile {
+      gap: 8px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+
+    @media (min-width: 1400px) {
+      column-gap: min(40px, calc((100% - 1240px) / 3));
+    }
+  }
+
+  &__item {
+    flex: 0 0 310px;
+  }
+
+  &__more {
+    display: none;
+    align-self: center;
+    box-shadow: inset 0 0 0 1px var(--ink);
+
+    @include tablet {
+      display: flex;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 506px;
+  overflow: hidden;
+  border-radius: $radius-card;
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: box-shadow $transition-fast;
+
+  @include hover {
+    .card__image {
+      transform: scale(1);
+    }
+  }
+
+  &__media {
+    flex-shrink: 0;
+    height: 310px;
+    overflow: hidden;
+    border-radius: $radius-card;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+    transform: scale(1.1);
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__title,
+  &__price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+}

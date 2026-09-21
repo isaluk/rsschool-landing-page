@@ -1,0 +1,115 @@
+@use "../abstracts" as *;
+
+.favorite {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.slider {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 60px;
+  grid-template-areas:
+    "prev viewport next"
+    ". dots .";
+  align-items: center;
+  gap: 40px;
+
+  &__arrow {
+    &--prev {
+      grid-area: prev;
+    }
+
+    &--next {
+      grid-area: next;
+    }
+  }
+
+  &__viewport {
+    grid-area: viewport;
+    width: 100%;
+    max-width: 1152px;
+    margin-inline: auto;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  &__dots {
+    grid-area: dots;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  &__dot {
+    width: 40px;
+    height: 4px;
+    border-radius: $radius-pill;
+    background: var(--line);
+    transition: background-color 250ms ease;
+
+    &--active {
+      background: var(--slider-line);
+    }
+  }
+
+  @include mobile {
+    &__arrow {
+      display: none;
+    }
+    grid-template-areas:
+      "viewport viewport viewport"
+      ". dots .";
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: min(480px, 100%);
+  margin-inline: auto;
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-height: 140px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  &__description {
+    text-wrap: pretty;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+}

@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  height: 64px;
+  border-radius: $radius-pill;
+  background: var(--bg);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.25;
+
+  & .icon {
+    width: 0;
+    margin-left: -8px;
+    opacity: 0;
+    transition:
+      width $transition-fast,
+      margin-left $transition-fast,
+      opacity $transition-fast;
+  }
+
+  @include hover {
+    & .icon {
+      width: 20px;
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+
+  @include tablet {
+    & .icon {
+      width: 20px;
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+}
+
+.round-button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--slider-line);
+  color: var(--ink);
+  transition:
+    box-shadow $transition-fast,
+    background-color $transition-fast;
+
+  @include hover {
+    color: var(--ink-inverse);
+    background: var(--slider-line);
+  }
+}
