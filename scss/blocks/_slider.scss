@@ -33,11 +33,17 @@
     max-width: 1152px;
     margin-inline: auto;
     overflow: hidden;
+    touch-action: pan-y;
+    user-select: none;
   }
 
   &__track {
     display: flex;
     transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--instant {
+      transition: none;
+    }
   }
 
   &__slide {
@@ -53,11 +59,22 @@
   }
 
   &__dot {
+    position: relative;
     width: 40px;
     height: 4px;
     border-radius: $radius-pill;
     background: var(--line);
     transition: background-color 250ms ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -10px 0;
+    }
+
+    @include hover {
+      background: var(--slider-line);
+    }
 
     &--active {
       background: var(--slider-line);

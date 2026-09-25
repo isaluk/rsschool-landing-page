@@ -698,10 +698,17 @@ a {
   max-width: 1152px;
   margin-inline: auto;
   overflow: hidden;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .slider__track {
   display: flex;
   transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slider__track--instant {
+  transition: none;
 }
 .slider__slide {
   flex: 0 0 100%;
@@ -714,11 +721,22 @@ a {
   gap: 12px;
 }
 .slider__dot {
+  position: relative;
   width: 40px;
   height: 4px;
   border-radius: 100px;
   background: var(--line);
   transition: background-color 250ms ease;
+}
+.slider__dot::before {
+  content: "";
+  position: absolute;
+  inset: -10px 0;
+}
+@media (hover: hover) {
+  .slider__dot:hover {
+    background: var(--slider-line);
+  }
 }
 .slider__dot--active {
   background: var(--slider-line);
