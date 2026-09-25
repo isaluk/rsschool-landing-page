@@ -35,14 +35,21 @@
   &__link {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 16px;
     font-weight: 600;
     white-space: nowrap;
-    padding-bottom: 2px;
-    border-bottom: 2px solid var(--bg);
-    transition: border-color $transition-fast;
 
-    @include underline-on-hover;
+    @media (min-width: 769px) {
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color $transition-fast;
+
+      @include underline-on-hover;
+    }
+  }
+
+  &__item--tablet-only {
+    display: none;
   }
 
   &__controls {
@@ -77,15 +84,52 @@
     }
 
     &__item--tablet-only {
+      margin-top: 40px;
       display: block;
     }
 
     &__nav {
-      display: none;
+      position: fixed;
+      inset: var(--header-height) 0 0;
+      z-index: 90;
+      overflow-y: auto;
+      margin-right: 0;
+      background: var(--bg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px);
+      transition:
+        opacity 300ms,
+        transform 300ms,
+        visibility 0s linear 300ms;
+
+      &--open {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition-delay: 0s;
+      }
+    }
+
+    &__list {
+      flex-direction: column;
+      justify-content: center;
+      gap: 60px;
+      min-height: 100%;
+      padding: 70px $container-padding-mobile 60px;
+    }
+
+    &__link {
+      font-size: 32px;
+      line-height: 1.25;
     }
   }
 
   @include mobile {
+    &__list {
+      justify-content: flex-start;
+    }
+
     &__controls {
       gap: 12px;
     }

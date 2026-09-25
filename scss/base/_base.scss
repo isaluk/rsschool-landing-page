@@ -4,6 +4,10 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 20px);
   scrollbar-gutter: stable;
+
+  &.is-scroll-locked {
+    overflow: hidden;
+  }
 }
 
 body {
