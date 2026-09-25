@@ -1,5 +1,7 @@
 const DATA_URL = "data/products.json";
 const LOAD_ERROR_TEXT = "Failed to load the menu. Please try again later.";
+const TABLET_QUERY = "(max-width: 768px)";
+const TABLET_INITIAL_COUNT = 4;
 
 function createElement(tag, className, text) {
   const element = document.createElement(tag);
@@ -45,10 +47,13 @@ export async function initCatalog() {
   const tabs = [...document.querySelectorAll("[data-catalog-tab]")];
   const list = document.querySelector("[data-catalog-list]");
   const emptyMessage = document.querySelector("[data-catalog-empty]");
+  const moreButton = document.querySelector("[data-catalog-more]");
+  const tabletQuery = window.matchMedia(TABLET_QUERY);
 
-  if (!tabs.length || !list || !emptyMessage) return;
+  if (!tabs.length || !list || !emptyMessage || !moreButton) return;
 
   let products = [];
+  let isExpanded = false;
 
   try {
     products = await loadProducts();
@@ -57,7 +62,21 @@ export async function initCatalog() {
     emptyMessage.textContent = LOAD_ERROR_TEXT;
   }
 
+  const updateVisibleCards = () => {
+    const cards = [...list.children];
+    const limit =
+      tabletQuery.matches && !isExpanded ? TABLET_INITIAL_COUNT : cards.length;
+
+    cards.forEach((card, index) => {
+      card.hidden = index >= limit;
+    });
+
+    moreButton.hidden = cards.length <= limit;
+  };
+
   const showCategory = (category) => {
+    isExpanded = false;
+
     tabs.forEach((tab) => {
       const isActive = tab.dataset.category === category;
       tab.classList.toggle("pill--active", isActive);
@@ -71,11 +90,19 @@ export async function initCatalog() {
     list.replaceChildren(...cards);
     list.hidden = cards.length === 0;
     emptyMessage.hidden = cards.length > 0;
+    updateVisibleCards();
   };
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => showCategory(tab.dataset.category));
   });
+
+  moreButton.addEventListener("click", () => {
+    isExpanded = true;
+    updateVisibleCards();
+  });
+
+  tabletQuery.addEventListener("change", updateVisibleCards);
 
   showCategory(tabs[0].dataset.category);
 }
