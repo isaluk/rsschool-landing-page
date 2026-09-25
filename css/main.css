@@ -990,6 +990,13 @@ a {
 .catalog__item {
   flex: 0 0 310px;
 }
+.catalog__empty {
+  padding-block: 100px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
 .catalog__more {
   display: none;
   align-self: center;
