@@ -1,14 +1,10 @@
+import { createElement } from "./dom.js";
+import { openProductModal } from "./product-modal.js";
+
 const DATA_URL = "data/products.json";
 const LOAD_ERROR_TEXT = "Failed to load the menu. Please try again later.";
 const TABLET_QUERY = "(max-width: 768px)";
 const TABLET_INITIAL_COUNT = 4;
-
-function createElement(tag, className, text) {
-  const element = document.createElement(tag);
-  element.className = className;
-  if (text !== undefined) element.textContent = text;
-  return element;
-}
 
 function createCard(product) {
   const item = createElement("li", "catalog__item");
@@ -25,8 +21,12 @@ function createCard(product) {
 
   const body = createElement("div", "card__body");
   const info = createElement("div", "card__info");
+  const title = createElement("h2", "card__title");
+  const button = createElement("button", "card__button", product.name);
+  button.type = "button";
+  title.append(button);
   info.append(
-    createElement("h2", "card__title", product.name),
+    title,
     createElement("p", "card__description", product.description),
   );
   body.append(info, createElement("span", "card__price", `$${product.price}`));
@@ -97,9 +97,20 @@ export async function initCatalog() {
     tab.addEventListener("click", () => showCategory(tab.dataset.category));
   });
 
+  list.addEventListener("click", (event) => {
+    const item = event.target.closest("[data-product-id]");
+    if (!item) return;
+
+    const product = products.find(({ id }) => id === item.dataset.productId);
+    if (product) openProductModal(product);
+  });
+
   moreButton.addEventListener("click", () => {
     isExpanded = true;
     updateVisibleCards();
+    list.children[TABLET_INITIAL_COUNT]
+      ?.querySelector(".card__button")
+      .focus({ preventScroll: true });
   });
 
   tabletQuery.addEventListener("change", updateVisibleCards);
