@@ -43,6 +43,14 @@
     flex: 0 0 310px;
   }
 
+  &__empty {
+    padding-block: 100px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+  }
+
   &__more {
     display: none;
     align-self: center;
@@ -68,6 +76,25 @@
   @include hover {
     .card__image {
       transform: scale(1);
+    }
+  }
+
+  &:has(.card__button:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  &__button {
+    text-align: left;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    &:focus-visible {
+      outline: none;
     }
   }
 

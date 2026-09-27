@@ -1,0 +1,190 @@
+@use "../abstracts" as *;
+
+.modal {
+  width: min(800px, calc(100% - 80px));
+  max-width: none;
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: $radius-card;
+  background: var(--bg);
+  color: var(--ink);
+
+  &[open] {
+    animation: modal-in 250ms ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::backdrop {
+    background: var(--overlay);
+    animation: modal-fade 250ms ease;
+  }
+
+  &__window {
+    display: grid;
+    grid-template-columns: minmax(0, 310px) minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+    max-height: calc(100dvh - 40px);
+    padding: 16px;
+    overflow-y: auto;
+  }
+
+  &__media {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: $radius-card;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__legend {
+    padding: 0;
+    margin-bottom: 8px;
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__total {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  &__note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.4;
+    padding-block: 12px;
+    border-top: 1px solid var(--line);
+
+    .icon {
+      margin-top: 1px;
+    }
+  }
+
+  &__close {
+    width: 100%;
+    height: 44px;
+    border-radius: $radius-pill;
+    box-shadow: inset 0 0 0 1px var(--ink);
+    font-weight: 600;
+    transition:
+      background-color $transition-fast,
+      color $transition-fast;
+
+    @include hover {
+      background: var(--pill-active-bg);
+      color: var(--pill-active-ink);
+    }
+  }
+
+  @media (max-width: 720px) {
+    &__window {
+      grid-template-columns: minmax(0, 40vw) minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 660px) {
+    width: calc(100% - 38px);
+    max-height: calc(100dvh - 24px);
+
+    &__window {
+      grid-template-columns: minmax(0, 1fr);
+      max-height: calc(100dvh - 24px);
+    }
+
+    &__media {
+      display: none;
+    }
+  }
+}
+
+.option {
+  display: block;
+  cursor: pointer;
+
+  &__input {
+    @include visually-hidden;
+  }
+
+  &__pill {
+    .option__input:checked + & {
+      @include pill-active;
+
+      .pill__mark {
+        background: var(--pill-mark-active-bg);
+        color: var(--pill-mark-active-ink);
+      }
+    }
+
+    .option__input:focus-visible + & {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+}
