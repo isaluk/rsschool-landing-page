@@ -264,6 +264,8 @@ a {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-12px);
+  }
+  .header__nav--animated {
     transition: opacity 300ms, transform 300ms, visibility 0s linear 300ms;
   }
   .header__nav--open {

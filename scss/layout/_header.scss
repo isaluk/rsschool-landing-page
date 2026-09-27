@@ -98,10 +98,13 @@
       opacity: 0;
       visibility: hidden;
       transform: translateY(-12px);
-      transition:
-        opacity 300ms,
-        transform 300ms,
-        visibility 0s linear 300ms;
+
+      &--animated {
+        transition:
+          opacity 300ms,
+          transform 300ms,
+          visibility 0s linear 300ms;
+      }
 
       &--open {
         opacity: 1;

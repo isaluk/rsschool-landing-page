@@ -26,7 +26,10 @@ export function initNav() {
     }
   };
 
-  burger.addEventListener("click", () => setOpen(!isOpen));
+  burger.addEventListener("click", () => {
+    nav.classList.add("header__nav--animated");
+    setOpen(!isOpen);
+  });
 
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => setOpen(false));
@@ -37,6 +40,7 @@ export function initNav() {
   });
 
   window.matchMedia(DESKTOP_QUERY).addEventListener("change", (event) => {
+    nav.classList.remove("header__nav--animated");
     if (event.matches) setOpen(false);
   });
 }
